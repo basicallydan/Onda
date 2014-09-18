@@ -1,4 +1,6 @@
-ONDA stands for Online News Diversity Analyser
+# ONDA
+
+## Online News Diversity Analyser
 
 It has two parts, the extractor/aggregator/analyser (this part, written in Python) and the PHP front-end which also generates diversity scores in real-time.
 
