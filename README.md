@@ -24,3 +24,11 @@ my best to describe it here in case you feel like helping.
 gather information about where to download articles (HTML web pages)
 * The machine running ONDA has access to the web
 * The system running it is capable of multi-threading
+
+### Downloading articles
+
+Before analysing or clustering anything, first a load of articles must be
+downloaded. This appears to happen in `retrieval/source.py` whose `__main__`
+function will, if certain lines are uncommented, retrieve articles from all of
+the sources stored in the database.
+
