@@ -1,14 +1,11 @@
 # To change this template, choose Tools | Templates
 # and open the template in the editor.
-
 from auxfunctions import database
 from term import InvertedIndex
 from threading import Thread
 from articleunigram import ArticleModel
-
 __author__="Dan"
 __date__ ="$16-Mar-2010 22:53:42$"
-
 class TermCounter(Thread):
     def __init__(self, articles, store=True,title_weight=19, print_steps=False, leading_weight=1,stoplist_file="../stop_words"):
         """A termcounter, which counts terms in a separate thread"""
@@ -19,7 +16,6 @@ class TermCounter(Thread):
         self.print_steps = print_steps
         self.leading_weight = leading_weight
         self.stoplist_file = stoplist_file
-
     def run(self):
         if self.store:
             db = database.connect_to_database()

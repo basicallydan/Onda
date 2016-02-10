@@ -206,7 +206,7 @@ def redownload_all_articles():
         source.web_update_article_text()
 
 if __name__ == "__main__":
-    #run_all_sources()
+    # run_all_sources()
     redownload_all_articles()
 
     '''
