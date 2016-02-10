@@ -32,3 +32,27 @@ downloaded. This appears to happen in `retrieval/source.py` whose `__main__`
 function will, if certain lines are uncommented, retrieve articles from all of
 the sources stored in the database.
 
+The articles will sometimes be plain text but in other instances stored as
+HTML, sometimes in horrible formats which need to be cleaned up. Once this is
+done, they're put straight into the database.
+
+### Counting terms
+
+Once the articles have been downloaded and their raw text stored, ONDA needs
+to count the individual terms used and remove any terms which are too common
+to be considered significant.
+
+This happens in `countuncountedarticles.py` - the counting refers to counting
+terms. E.g., article 3829 may have 5 instances of the word "iraq" and 3
+instances of the word "war" and 2 of the word "blair". (These examples aren't
+random; part of my dissertation writeup covered the way that the news media
+covered the Iraq War of 2003-2011).
+
+The terms are also pruned: stop words stored in `stop_words` are not counted
+when they are encountered because they are statistically insignificant and do
+not reveal anything about the content of an article.
+
+The code which is responsible for counting terms is in
+`unigrammodel/termcounter.py`.
+
+
